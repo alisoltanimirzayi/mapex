@@ -42,7 +42,7 @@ If a package is already installed, Stata may tell you that it is already present
 Once the repository is published, install Mapex from Stata with:
 
 ```stata
-net install mapex, from("https://github.com/alisoltanimirzayi/mapex/main/") replace
+net install mapex, from("https://raw.githubusercontent.com/alisoltanimirzayi/mapex/main/") replace
 ```
 
 
