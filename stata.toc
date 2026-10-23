@@ -1,0 +1,9 @@
+* version 
+v 1.0
+
+* description
+d mapex
+d program by alisoltanimirzayi@gmail.com
+
+*package name
+p mapex.pkg

@@ -1,0 +1,126 @@
+// v1.0 (1404 Aban 22)
+
+*********************
+*					*
+*	mapex_details	*
+*					*
+*********************
+VERSION 17
+POSITION . . 360 260
+
+// main dialog
+DIALOG main, label("colors of map")
+	BEGIN
+		// Choosing colors
+		GROUPBOX tx_box 175 40 160 90
+		TEXT tx_col1 190 20 . . , label(":رنگ‌های طیف را انتخاب کنید")
+		TEXT tx_col2 270 +40 60 40, label(":رنگ اول")
+		COLOR col_cs1 190 @ 50 25, label("color") default("3 167 173")
+		TEXT tx_col3 270 +30 60 40, label(":رنگ دوم")
+		COLOR col_cs2 190 @ 50 25, label("color") default("223 0 0")
+		
+		// checkbox for specifying cuts
+		GROUPBOX gr_box 10 10 150 251
+		TEXT tx_line 25 105 120 20, label("_______________________________________")
+		TEXT tx_ck 30 +15 120 20, label("فاصله خوشه‌ها خودکار باشد")
+		CHECKBOX ck_box +70 +20 @ 20, label("باشد") onclickon(script buttonson) onclickoff(script buttonsoff)
+		
+		// choosing label colors_names
+		TEXT tx_combx 55 20 100 20, label(":رنگ لیبل استان‌ها")
+		COMBOBOX comb_bx 25 +25 120 20, label("combo") contents(colors) default(black) dropdownl
+		
+		
+		// choosing label colors_number
+		TEXT tx_combx2 70 +25 100 20, label(":رنگ لیبل اعداد")
+		COMBOBOX comb_bx2 25 +25 120 20, label("combo2") contents(colors) default(white) dropdownl
+		
+		
+		// automating cuts
+		TEXT tx_spin 30 +70 120 40, label(":تعداد خوشه‌های نقشه")
+		SPINNER spin_num +52 +25 . ., label("spinner") min(2) max(15) default(4) nomemory
+		
+		// manual cuts
+		TEXT tx_cut 35 +20 120 20, label(":برش‌های بین خوشه‌ها")
+		EDIT ed_cut 25 +25 120 20, label("edit") tooltip("اعداد برش‌ها رو با یک فاصله از هم وارد کنید، مثل 30 20 10")
+		
+		// variable to use in map
+		TEXT tx_vr 274 150 70 20, label("متغیر نقشه")
+		VARNAME vr_vl -99 +28 161 40, label("variable") nomemory
+	END
+
+// main buttons
+OK ok1
+CANCEL can1
+RESET res1
+
+// checkbox disable/enable
+SCRIPT buttonson
+	BEGIN
+		main.ed_cut.disable
+		main.spin_num.enable
+	END
+
+// checkbox disable/enable
+SCRIPT buttonsoff
+	BEGIN
+		main.ed_cut.enable
+		main.spin_num.disable
+	END
+
+// color selector default
+SCRIPT color_select
+	BEGIN
+		main.col_cs1.setvalue("3 167 173")
+		main.col_cs2.setvalue("223 0 0")
+	END
+
+// uaction
+PROGRAM command
+	BEGIN
+		require main.vr_vl
+		if main.ck_box.iseq(1) {
+			require main.spin_num
+		}
+		if main.ck_box.iseq(0) {
+			require main.ed_cut
+		}
+		put "qui global color_select1 "
+		put main.col_cs1
+		stata
+		clear
+		put "qui global color_select2 "
+		put main.col_cs2
+		stata
+		clear
+		put "qui global color_label "
+		put main.comb_bx
+		stata
+		clear
+		put "qui global color_number "
+		put main.comb_bx2
+		stata
+		clear		
+		if main.ck_box.iseq(1) {
+		    put "qui global spin_cut "
+			put main.spin_num
+			stata
+			clear
+			put "qui global ed_cut "
+			put `" "" "'
+		}
+		if main.ck_box.iseq(0) {
+		    put "qui global ed_cut "
+			put main.ed_cut
+			stata
+			clear
+			put "qui global spin_cut "
+			put `" "" "'
+		}
+		stata
+		clear
+		put "qui global vartoplot "
+		put main.vr_vl
+		stata
+		clear
+		put "mapex_done"
+	END

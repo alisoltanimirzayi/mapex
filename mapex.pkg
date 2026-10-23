@@ -1,0 +1,20 @@
+* Version
+v 1.0.0
+
+* Description
+d Mapex: a dialog-based wrapper for plotting a one-variable choropleth map of Iran's provinces
+d Requires Stata 17 or later and community-contributed dependencies; see mapex.sthlp and README.
+
+* Files
+f mapex.ado
+f mapex.sthlp
+f mapex_con.ado
+f mapex_done.ado
+f mapex_stop1.ado
+f mapxdtail_call.ado
+f mapex_details.dlg
+f mapex_var.dlg
+F map.dta
+F map_shp.dta
+F mapSee_Iran.dta
+F mapSee_Iran_shp.dta

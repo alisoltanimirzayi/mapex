@@ -1,0 +1,46 @@
+//v1.0 (1404 Aban 22)
+
+*****************
+*				*
+*	mapex_var   *
+*			 	*
+*****************
+
+VERSION 17
+POSITION . . 310 200
+// main dialog
+DIALOG main, label("متغیرها")
+	BEGIN
+		// choosing ostan variable
+		TEXT tx_var 160 10 270 ., label(":متغیر استان را انتخاب کنید") 
+		VARNAME vn_var 20 +30 270 ., label("استان")
+		
+		// choosing datast type
+		GROUPBOX gr_box 15 80 280 100
+		TEXT tx_radio 135 90 270 ., label(":نوع دیتای خود را مشخص کنید")
+		RADIO r1 110 +30 270 ., first label("داده استان‌ها تجمیع شده‌اند")
+		RADIO r2 148 +25 270 ., last label("داده استان‌ها خام‌اند")
+	END
+
+// main buttons
+OK ok1
+CANCEL can1
+RESET res1
+
+// uaction
+PROGRAM command
+	BEGIN
+		require main.vn_var
+		put "qui global ostanvar " // storing ostan variable to merge with map
+		put main.vn_var
+		stata
+		clear
+		if main.r1.iseq(1) {
+		    put "mapxdtail_call" // calling the next dlg if r1 is checked
+		}
+		stata
+		clear
+		if main.r2.iseq(1) {
+			put "mapex_stop1" // calling the same dlg if r2 is checked
+		}
+	END
