@@ -102,47 +102,7 @@ Open the Mapex workflow:
 The following example illustrates the data structure expected by {cmd:mapex}: one observation per province, a string variable containing province names, and a numeric variable to map.
 
 {pstd}
-Example input data:
-
-{p 8 8 2}
-{input}
-province                 x
-{hline 28}
-آذربایجان شرقی         178
-آذربایجان غربی          47
-اردبیل                  677
-اصفهان                  481
-البرز                   369
-ایلام                   400
-بوشهر                   780
-تهران                   840
-خراسان جنوبی            195
-خراسان رضوی             454
-خراسان شمالی            163
-خوزستان                 300
-زنجان                   750
-سمنان                   517
-سیستان و بلوچستان       477
-فارس                    471
-قزوین                   630
-قم                      120
-لرستان                  361
-مازندران                991
-مرکزی                   385
-هرمزگان                 786
-همدان                   265
-چهارمحال و بختیاری      567
-کردستان                 438
-کرمان                   418
-کرمانشاه                 72
-کهگیلویه و بویراحمد     390
-گلستان                  581
-گیلان                   116
-یزد                     820
-{text}
-
-{pstd}
-After creating the dataset, run {cmd:mapex}. Select {cmd:province} as the province-name variable and {cmd:x} as the variable to map. Follow the dialogs to configure the map.
+For a complete example dataset containing observations for all 31 provinces of Iran, see the {browse "https://github.com/alisoltanimirzayi/mapex#example-input-data":Example input data} section in the Mapex GitHub repository.
 
 
 {title:Installation & Update}
@@ -160,7 +120,7 @@ Mapex is a convenience wrapper around community-contributed Stata tools, especia
 
 {title:Author}
 {pstd}
-Mapex was written by Ali Soltani Mirzayi. For support and bug reports, use the GitHub repository's Issues page once the repository URL has been finalized.
+Mapex was written by Ali Soltani Mirzayi. For support and bug reports, use the GitHub repository's Issues page.
 
 {pstd}
 Email: {browse "mailto:alisoltanimirzayi@gmail.com":alisoltanimirzayi@gmail.com}
