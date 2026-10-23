@@ -17,12 +17,12 @@
 - **Stata 17 or later** (the programs and dialogs declare version 17).
 - An internet connection for installing the required community-contributed dependencies.
 - The following packages:
-  - [`geoplot`](https://ideas.repec.org/c/boc/bocode/s459211.html)
-  - [`palettes`](https://ideas.repec.org/c/boc/bocode/s458444.html) (provides `colorpalette`)
-  - `colrspace`
-  - `moremata`
-  - `reclink`
-  - `missings`
+  - <a href="https://ideas.repec.org/c/boc/bocode/s459211.html" target="_blank">geoplot</a>
+  - <a href="https://ideas.repec.org/c/boc/bocode/s458444.html" target="_blank">palettes</a>
+  - <a href="https://ideas.repec.org/c/boc/bocode/s458597.html" target="_blank">colrspace</a>
+  - <a href="https://ideas.repec.org/c/boc/bocode/s455001.html" target="_blank">moremata</a>
+  - <a href="https://ideas.repec.org/c/boc/bocode/s456876.html" target="_blank">reclink</a>
+  - <a href="https://ideas.repec.org/c/boc/bocode/s458071.html" target="_blank">missings</a>
 
 Mapex checks for these dependencies when you run it and displays installation hints if some are missing. You can install them from Stata, for example:
 
@@ -45,13 +45,10 @@ Once the repository is published, install Mapex from Stata with:
 net install mapex, from("https://github.com/alisoltanimirzayi/mapex/main/") replace
 ```
 
-Replace `yourusername/Mapex` with the actual GitHub account and repository name. The repository's root directory should contain `stata.toc`, `mapex.pkg`, and all files listed in `mapex.pkg`.
-
-To update Mapex after publishing a new version, run the same command again with `replace`.
 
 ## Quick start
 
-1. Open Stata and load the dataset you want to map, or prepare it in Excel.
+1. Prepare the dataset in excel.
 2. Run:
 
    ```stata
@@ -81,6 +78,46 @@ The current workflow is designed for **one observation per province** and a prov
 - If your data contain multiple rows per province, aggregate them to the province level before using Mapex.
 
 Mapex attempts a fuzzy match between the province names in your data and its bundled province reference file. Fuzzy matching is a convenience, not a substitute for checking the names and the matches.
+
+## Example input data
+
+The following example contains one observation for each of Iran's 31 provinces and a numeric variable, `x`, to map. The values are illustrative.
+
+| province | var_to_plot |
+|---|---:|
+| آذربایجان شرقی | 178 |
+| آذربایجان غربی | 47 |
+| اردبیل | 677 |
+| اصفهان | 481 |
+| البرز | 369 |
+| ایلام | 400 |
+| بوشهر | 780 |
+| تهران | 840 |
+| خراسان جنوبی | 195 |
+| خراسان رضوی | 454 |
+| خراسان شمالی | 163 |
+| خوزستان | 300 |
+| زنجان | 750 |
+| سمنان | 517 |
+| سیستان و بلوچستان | 477 |
+| فارس | 471 |
+| قزوین | 630 |
+| قم | 120 |
+| لرستان | 361 |
+| مازندران | 991 |
+| مرکزی | 385 |
+| هرمزگان | 786 |
+| همدان | 265 |
+| چهارمحال و بختیاری | 567 |
+| کردستان | 438 |
+| کرمان | 418 |
+| کرمانشاه | 72 |
+| کهگیلویه و بویراحمد | 390 |
+| گلستان | 581 |
+| گیلان | 116 |
+| یزد | 820 |
+
+After creating or importing the data, run `mapex` and select `province` as the province-name variable and `var_to_plot` as the variable to map.
 
 ## Class breaks
 
