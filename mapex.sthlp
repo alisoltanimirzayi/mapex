@@ -99,9 +99,6 @@ Open the Mapex workflow:
 {cmd:. mapex}
 
 {pstd}
-The following example illustrates the data structure expected by {cmd:mapex}: one observation per province, a string variable containing province names, and a numeric variable to map.
-
-{pstd}
 For a complete example dataset containing observations for all 31 provinces of Iran, see the {browse "https://github.com/alisoltanimirzayi/mapex#example-input-data":Example input data} section in the Mapex GitHub repository.
 
 
