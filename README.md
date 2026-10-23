@@ -1,6 +1,6 @@
 # Mapex
 
-**Mapex** is a Stata add-on for producing a choropleth map of a single variable across the provinces of Iran. It wraps selected functionality from Ben Jann's [`geoplot`](https://www.stata.com/) workflow in a guided, dialog-based routine, so users can create a province-level map without writing the underlying mapping commands themselves.
+**Mapex** is a Stata add-on for producing a choropleth map of a single variable across the provinces of Iran. It wraps selected functionality from Ben Jann's [`geoplot`](https://ideas.repec.org/c/boc/bocode/s459211.html) workflow in a guided, dialog-based routine, so users can create a province-level map without writing the underlying mapping commands themselves.
 
 > **Status:** Mapex is an early release. The current workflow is intended for data already aggregated to the province level. The dialog option for raw, individual-level data is not implemented yet.
 
@@ -17,8 +17,8 @@
 - **Stata 17 or later** (the programs and dialogs declare version 17).
 - An internet connection for installing the required community-contributed dependencies.
 - The following packages:
-  - [`geoplot`](https://ideas.repec.org/c/boc/bocode/s453901.html)
-  - [`palettes`](https://ideas.repec.org/c/boc/bocode/s457090.html) (provides `colorpalette`)
+  - [`geoplot`](https://ideas.repec.org/c/boc/bocode/s459211.html)
+  - [`palettes`](https://ideas.repec.org/c/boc/bocode/s458444.html) (provides `colorpalette`)
   - `colrspace`
   - `moremata`
   - `reclink`
@@ -42,7 +42,7 @@ If a package is already installed, Stata may tell you that it is already present
 Once the repository is published, install Mapex from Stata with:
 
 ```stata
-net install mapex, from("https://raw.githubusercontent.com/yourusername/Mapex/main/") replace
+net install mapex, from("https://github.com/alisoltanimirzayi/mapex/main/") replace
 ```
 
 Replace `yourusername/Mapex` with the actual GitHub account and repository name. The repository's root directory should contain `stata.toc`, `mapex.pkg`, and all files listed in `mapex.pkg`.
@@ -113,6 +113,6 @@ Mapex is a convenience wrapper around community-contributed Stata mapping tools,
 
 Please report bugs, mismatched province names, or suggestions in the repository's **Issues** section:
 
-`https://github.com/yourusername/Mapex/issues`
+`https://github.com/alisoltanimirzayi/mapex/issues`
 
 Replace the placeholder URL after the GitHub repository has been created.
