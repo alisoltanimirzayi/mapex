@@ -1,9 +1,10 @@
 * version 
-v 1.0
+v 2.0
 
 * description
-d mapex
+d mapex: A Stata program to draw a one-variate choropleth map across provinces
 d program by alisoltanimirzayi@gmail.com
+d Iran provinces 
 
 *package name
 p mapex.pkg
