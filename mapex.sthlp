@@ -122,6 +122,10 @@ Mapex was written by Ali Soltani Mirzayi. For support and bug reports, use the G
 {pstd}
 Email: {browse "mailto:alisoltanimirzayi@gmail.com":alisoltanimirzayi@gmail.com}
 
+{pstd}
+Github: {browse "browse "https://github.com/alisoltanimirzayi/mapex"}
+
+
 {title:Also see}
 
 {psee}
