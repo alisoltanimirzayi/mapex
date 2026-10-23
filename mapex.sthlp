@@ -70,6 +70,7 @@ The current workflow expects province-level data, normally one observation for e
 {pstd}
 If the source data contain individual-level records or multiple observations per province, aggregate them to one record per province before using Mapex. Check for duplicate province names, missing provinces, spelling differences, and extra spaces. Mapex uses fuzzy matching to associate the supplied province names with its reference geography; users should verify that the names and matches are correct.
 
+
 {title:Class breaks}
 
 {pstd}
@@ -97,16 +98,60 @@ Open the Mapex workflow:
 {p 8 12 2}
 {cmd:. mapex}
 
-{title:Installation}
+{pstd}
+The following example illustrates the data structure expected by {cmd:mapex}: one observation per province, a string variable containing province names, and a numeric variable to map.
 
 {pstd}
-After the package is published to GitHub, install it from Stata using the repository URL (replace the placeholder account and repository with the actual values):
+Example input data:
+
+{p 8 8 2}
+{input}
+province                 x
+{hline 28}
+آذربایجان شرقی         178
+آذربایجان غربی          47
+اردبیل                  677
+اصفهان                  481
+البرز                   369
+ایلام                   400
+بوشهر                   780
+تهران                   840
+خراسان جنوبی            195
+خراسان رضوی             454
+خراسان شمالی            163
+خوزستان                 300
+زنجان                   750
+سمنان                   517
+سیستان و بلوچستان       477
+فارس                    471
+قزوین                   630
+قم                      120
+لرستان                  361
+مازندران                991
+مرکزی                   385
+هرمزگان                 786
+همدان                   265
+چهارمحال و بختیاری      567
+کردستان                 438
+کرمان                   418
+کرمانشاه                 72
+کهگیلویه و بویراحمد     390
+گلستان                  581
+گیلان                   116
+یزد                     820
+{text}
+
+{pstd}
+After creating the dataset, run {cmd:mapex}. Select {cmd:province} as the province-name variable and {cmd:x} as the variable to map. Follow the dialogs to configure the map.
+
+
+{title:Installation & Update}
+
+{pstd}
+You can install or Update the program from Stata using this
 
 {p 8 12 2}
-{cmd:net install mapex, from("https://raw.githubusercontent.com/yourusername/Mapex/main/") replace}
-
-{pstd}
-The repository root must include {cmd:stata.toc}, {cmd:mapex.pkg}, and all files listed in the package manifest.
+{cmd:net install mapex, from("https://raw.githubusercontent.com/alisoltanimirzayi/mapex/main/") replace}
 
 {title:Dependencies and acknowledgement}
 
@@ -114,9 +159,11 @@ The repository root must include {cmd:stata.toc}, {cmd:mapex.pkg}, and all files
 Mapex is a convenience wrapper around community-contributed Stata tools, especially Ben Jann's {cmd:geoplot}. Consult the help files for those commands for their full documentation and licensing terms.
 
 {title:Author}
-
 {pstd}
 Mapex was written by Ali Soltani Mirzayi. For support and bug reports, use the GitHub repository's Issues page once the repository URL has been finalized.
+
+{pstd}
+Email: {browse "mailto:alisoltanimirzayi@gmail.com":alisoltanimirzayi@gmail.com}
 
 {title:Also see}
 
