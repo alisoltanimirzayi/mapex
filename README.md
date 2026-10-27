@@ -1,4 +1,4 @@
-<style>*{direction: rtl}</style>
+<div dir="rtl">
 
 # Mapex
 
@@ -155,3 +155,4 @@ Mapex یک ابزار واسط برای ساده‌سازی استفاده از 
 `https://github.com/alisoltanimirzayi/mapex/issues`
 
 پس از ایجاد مخزن GitHub، نشانی اینترنتی جای‌نگهدار را جایگزین کنید.
+</div>
