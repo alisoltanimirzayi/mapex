@@ -41,7 +41,7 @@ ssc install missings
 
 ## نصب
 
-پس از انتشار مخزن، Mapex را با دستور زیر از طریق Stata نصب کنید:
+پکیج، Mapex را با دستور زیر از طریق Stata نصب کنید:
 
 ```stata
 net install mapex, from("https://raw.githubusercontent.com/alisoltanimirzayi/mapex/main/") replace
